@@ -2,12 +2,11 @@ package ics141.mainproject;
 
 public class TaxInfo {
 	/*
-	 * we ignore personalk exemptions and iteimized deuctions. Work off of Adujsted gross income
-	 * need to change all doubles to long + 00, which would get rid of all the float buggery 
-	 * but I didn't occur to me till I was almost done
+	 * we ignore personal exemptions and itemized deductions. Work off of Adjusted gross income
+	 * need to change all doubles to long + 00, which would get rid of all the float buggery but I didn't occur to me till I was almost done
 	 * https://www.irs.gov/taxtopics/tc500
-	 * ignore deductables and base everything off of standard income is my suggestion, but it can go either way
-	 * Their is a fourth catagory for taxes(maybe?) which is Married Filily jointly. Qualified widow falls into married joint./
+	 * ignore deductibles and base everything off of standard income is my suggestion, but it can go either way
+	 * There is a fourth category for taxes(maybe?) which is Married Filily jointly. A qualified widow falls into married joint
 	*/
 	private double AGI; String STS;
 	public TaxInfo(double AdjustedGrossIncome, String status) {
@@ -69,7 +68,7 @@ public class TaxInfo {
 			incomeWithinRange = tempAGI - 0;
 			tax_credit = tax_credit + (incomeWithinRange * 0.10);
 			tempAGI = 0;
-			//The 0 are staying in to maintain internal readablity
+			//The redundant 0s are staying in to maintain internal readablity
 		}
 	
 		return tax_credit;
@@ -111,7 +110,7 @@ public class TaxInfo {
 			incomeWithinRange = tempAGI - 0;
 			tax_credit = tax_credit + (incomeWithinRange * 0.10);
 			tempAGI = 0;
-			//The 0 are staying in to maintain internal readablity
+			//The redundant 0s are staying in to maintain internal readablity
 		}
 		return tax_credit;
 	}
@@ -152,7 +151,7 @@ public class TaxInfo {
 			incomeWithinRange = tempAGI - 0;
 			tax_credit = tax_credit + (incomeWithinRange * 0.10);
 			tempAGI = 0;
-			//The 0 are staying in to maintain internal readablity
+			//The redundant 0s are staying in to maintain internal readablity
 		}
 		return tax_credit;
 	}
