@@ -7,7 +7,7 @@ public class CreditCalc3 {
 	private double eicPCT;
 
 	public int getEic(double inc, double dep, double status) {
-
+//inc = Total gross, dep = dependants
 		if (status == 1 && dep == 0) {
 			if (inc > 7029 && inc < 8791) {
 				eicAmt = 538;
