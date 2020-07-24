@@ -21,6 +21,7 @@ public class BracketCalculator {
 			//Married seperate
 			taxes_owed = bracketMarriedSeperate(bracketInfo);
 		}
+		taxes_owed = taxes_owed - bracketInfo.getCredit();
 		long payment = Math.round(taxes_owed);
 		return payment;
 	}

@@ -1,14 +1,6 @@
 package ics141.mainproject;
 
 public class TaxInfo {
-	/*
-     * we ignore personal exemptions and itemized deductions. Work off of Adjusted gross income
-	 * need to change all doubles to long + 00, which would get rid of all the float buggery but I didn't occur to me till I was almost done
-	 * https://www.irs.gov/taxtopics/tc500
-	 * ignore deductibles and base everything off of standard income is my suggestion, but it can go either way
-	 * There is a fourth category for taxes(maybe?) which is Married Filily jointly. A qualified widow falls into married joint
-	income - standard deduct, withholdings, any tax credits, EIC
-	*/
 	
 	private double agi;
 	private double sts;
@@ -72,20 +64,19 @@ public class TaxInfo {
 	public double getDep() {
 		return dep;
 	}
+	
 	public double getAgi() {
 		return agi;
 	}
 	public double getPayment() {
 		return payment;
 	}
-	
+
 	public double AGIcalculator() {
 		double StanDeduct = 0;
-		double AdjustedGrossIncome = total - (withhold + StanDeduct + credit);
+		double AdjustedGrossIncome = total - (withhold + StanDeduct);
 		return AdjustedGrossIncome;
-	}
-		
-	
+	}	
 	
 	public String toString() {
 		String status = null;
