@@ -1,6 +1,7 @@
 package ics141.mainproject;
 
 public class BracketCalculator {
+	//this does the bracket calculations
 	public long tax_Bracket(TaxInfo bracketInfo){
 		double taxes_owed = 0;
 		// = gross adjusted income
@@ -26,7 +27,8 @@ public class BracketCalculator {
 		return payment;
 	}
 	
-	//all of the following three functions work on the same basis, take agi in, find the maximum bracket it fits into, then run it thorugh all brackets.
+	//all of the following four functions work on the same basis, take agi in, and then find the maximum bracket it fits into. 
+	//then runs the amount of money the user has in the bracket through that bracket. It then takes the remaining money, and runs that through the bracket.
 	private double bracketSingle(TaxInfo bracketInfo){
 		double taxes_owed = 0, incomeWithinRange = 0; 
 		double tempagi = bracketInfo.getAgi();
@@ -69,6 +71,7 @@ public class BracketCalculator {
 	
 		return taxes_owed;
 	} 
+	//self explainitory, see single for more detailed explanation
 	private double bracketMarriedJoint(TaxInfo bracketInfo) {
 		double taxes_owed = 0, incomeWithinRange = 0; 
 		double tempagi = bracketInfo.getAgi();
@@ -110,6 +113,7 @@ public class BracketCalculator {
 		}
 		return taxes_owed;
 	}
+	//self explainitory, see single for more detailed explanation
 	private double bracketHOH(TaxInfo bracketInfo) {
 		double taxes_owed = 0, incomeWithinRange = 0; 
 		double tempagi = bracketInfo.getAgi();
@@ -151,6 +155,7 @@ public class BracketCalculator {
 		}
 		return taxes_owed;
 	}
+	//self explainitory, see single for more detailed explanation
 	private double bracketMarriedSeperate(TaxInfo bracketInfo) {
 		double taxes_owed = 0, incomeWithinRange = 0; 
 		double tempagi = bracketInfo.getAgi();
